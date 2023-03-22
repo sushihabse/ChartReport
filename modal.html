@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            label{
+                color:#000;
+                font-weight:500;
+                background:#fff;
+                margin-bottom:5px;
+                padding:4px;
+                border-radius:4px;
+                }
+                input{
+                margin-bottom:10px
+                }
+            .sub-bg {
+                    background: url('https://the-french.co.uk/wp-content/uploads/2018/02/111-400x600.jpg')no-repeat;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    }
+                    .subs-header{
+                    padding-top: 0px;
+                    border-bottom: 0px;
+                    }
+                    .heading-text h4{
+                    color: #fff;
+                    padding: 20px;
+                    border: 2px solid #d3d3d3;
+                    display: inline-block;
+                    border-radius: 20px;
+                    box-shadow: inset 10px 12px 13px -7px rgba(0,0,0,0.7);
+                    -moz-box-shadow: inset 10px 12px 13px -7px rgba(0,0,0,0.7);
+                    -webkit-box-shadow: inset 10px 12px 13px -7px rgba(0,0,0,0.7);
+                    -o-box-shadow: inset 10px 12px 13px -7px rgba(0,0,0,0.7);
+                    }
+                    .heading-text{
+                    margin-top: 10px;
+                }
+            .close:not(:disabled):not(.disabled):focus, .close:not(:disabled):not(.disabled):hover {
+                outline: none;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="text-center jumbotron">
+            <a class="btn btn-primary" data-toggle="modal" href='#susbc-form'>Click
+                Here To View Modal</a>
+            <p>OR Wait for 3 secound to check modal</p>
+        </div>
+        <div class="modal fade" id="susbc-form">
+            <div class="modal-dialog shadow-lg p-3 mb-5 bg-white rounded">
+                <div class="modal-content sub-bg">
+                    <div class="modal-header subs-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">&times;</button>
+                        <!-- <h4 class="modal-title">Modal title</h4> -->
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img class="img-fluid"
+                                src="http://pluspng.com/img-png/national-geographic-logo-vector-png-national-geographic-kids-logo-vector-300.png"
+                                alt="">
+                        </div>
+                        <div class="heading-text text-center ">
+                            <h4 class="shadow p-3 mb-5">Kiddoz Club Presenting
+                                <br> Special Offer</h4>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <form id="subs-form">
+                                    <div class="form-group row">
+                                        <div class="col-md-12 col-xs-12">
+                                            <label for="firstName" class="">First
+                                                Name </label>
+                                            <input type="text"
+                                                class="form-control"
+                                                id="firstName"
+                                                placeholder="Please enter first
+                                                name" required>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12">
+                                            <label for="firstName">Middle Name
+                                            </label>
+                                            <input type="text"
+                                                class="form-control"
+                                                id="firstName"
+                                                placeholder="Please enter middle
+                                                name" required>
+                                        </div>
+                                        <div class="col-md-12 col-xs-12">
+                                            <label for="firstName">Last Name
+                                            </label>
+                                            <input type="text"
+                                                class="form-control"
+                                                id="firstName"
+                                                placeholder="Please enter last
+                                                name" required>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary
+                                        text-center">Subscribe Now</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="susbc-form-thank">
+            <div class="modal-dialog">
+                <div class="modal-content sub-bg shadow-lg">
+                    <div class="modal-header subs-header">
+                        <button type="button" class="close" data-dismiss="modal"
+                            aria-hidden="true">&times;</button>
+                        <!-- <h4 class="modal-title">Modal title</h4> -->
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img
+                                src="http://pluspng.com/img-png/national-geographic-logo-vector-png-national-geographic-kids-logo-vector-300.png"
+                                alt="">
+                        </div>
+                        <div class="heading-text text-center">
+                            <h4>Thank you For Subscribe</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+                setTimeout(function() {
+                $('#susbc-form').modal('show');
+                },3000);
+                var form = document.getElementById("subs-form");
+                form.addEventListener("submit", onSubmitForm);
+                function onSubmitForm(e) {
+                e.preventDefault();
+                $('#subs-form')[0].reset();
+                $('#susbc-form').modal('hide');
+                $('#susbc-form-thank').modal('show');
+			}
+        </script>
+
+    </body>
+</html>
